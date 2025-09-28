@@ -1,6 +1,7 @@
 import random
 import time
 from bubbleSort import *
+from mergeSort import *
 
 def getUserLogic():
     userInput =input("Select a sorting algorithm (1-5): ")
@@ -34,7 +35,7 @@ def sortLogic(intType, typeOfSort):
 2. Average Case
 3. Worst Case
 4. Exit {typeOfSort} sort test""")
-    caseType = input("Select the case (1-4):")
+    caseType = input("Select the case (1-4): ")
     match intType:
         case "1":
             match caseType:
@@ -135,6 +136,107 @@ def sortLogic(intType, typeOfSort):
                         newTestArr = [0] * newArrSizeInt
                         start_time = time.time()
                         bubble_sort(createWorseCase(newTestArr))
+                        print(f"For N = {newArrSize}, it takes: {elapsed_time:.4f} seconds\n")
+                    mainLogic()
+        case "2":
+            match caseType:
+                case "1":
+                    print("\nIn the best case,")
+                    # N = 100
+                    start_time = time.time()
+                    merge_sort(createBestCase(testcase1))
+                    end_time = time.time()
+                    elapsed_time = end_time - start_time
+                    print(f"For N = 100, it takes: {elapsed_time:.4f} seconds")
+
+                    # N = 1000
+                    start_time = time.time()
+                    merge_sort(createBestCase(testcase2))
+                    end_time = time.time()
+                    elapsed_time = end_time-start_time
+                    print(f"For N = 1000, it takes: {elapsed_time:.4f} seconds")
+
+                    # N = 10000
+                    start_time = time.time()
+                    merge_sort(createBestCase(testcase3))
+                    end_time = time.time()
+                    elapsed_time = end_time-start_time
+                    print(f"For N = 10000, it takes: {elapsed_time:.4f} seconds")
+
+                    continueTesting = input("Do you want to input another N (Y/N)? ")
+                    continueTesting = continueTesting.upper()
+                    if continueTesting == "Y":
+                        newArrSize = input("What is the N? ")
+                        newArrSizeInt = int(newArrSize)
+                        newTestArr = [0] * newArrSizeInt
+                        start_time = time.time()
+                        merge_sort(createBestCase(newTestArr))
+                        print(f"For N = {newArrSize}, it takes: {elapsed_time:.4f} seconds\n")
+                    mainLogic()
+                case "2":
+                    print("\nIn the average case,")
+                    # N = 100
+                    start_time = time.time()
+                    merge_sort(createAvgCase(testcase1))
+                    end_time = time.time()
+                    elapsed_time = end_time - start_time
+                    print(f"For N = 100, it takes: {elapsed_time:.4f} seconds")
+
+                    # N = 1000
+                    start_time = time.time()
+                    merge_sort(createAvgCase(testcase2))
+                    end_time = time.time()
+                    elapsed_time = end_time-start_time
+                    print(f"For N = 1000, it takes: {elapsed_time:.4f} seconds")
+
+                    # N = 10000
+                    start_time = time.time()
+                    merge_sort(createAvgCase(testcase3))
+                    end_time = time.time()
+                    elapsed_time = end_time-start_time
+                    print(f"For N = 10000, it takes: {elapsed_time:.4f} seconds")
+
+                    continueTesting = input("Do you want to input another N (Y/N)? ")
+                    continueTesting = continueTesting.upper()
+                    if continueTesting == "Y":
+                        newArrSize = input("What is the N? ")
+                        newArrSizeInt = int(newArrSize)
+                        newTestArr = [0] * newArrSizeInt
+                        start_time = time.time()
+                        merge_sort(createAvgCase(newTestArr))
+                        print(f"For N = {newArrSize}, it takes: {elapsed_time:.4f} seconds\n")
+                    mainLogic()
+                case "3":
+                    print("\nIn the worst case,")
+                    # N = 100
+                    start_time = time.time()
+                    merge_sort(createWorseCase(testcase1))
+                    end_time = time.time()
+                    elapsed_time = end_time - start_time
+                    print(f"For N = 100, it takes: {elapsed_time:.4f} seconds")
+
+                    # N = 1000
+                    start_time = time.time()
+                    merge_sort(createWorseCase(testcase2))
+                    end_time = time.time()
+                    elapsed_time = end_time-start_time
+                    print(f"For N = 1000, it takes: {elapsed_time:.4f} seconds")
+
+                    # N = 10000
+                    start_time = time.time()
+                    merge_sort(createWorseCase(testcase3))
+                    end_time = time.time()
+                    elapsed_time = end_time-start_time
+                    print(f"For N = 10000, it takes: {elapsed_time:.4f} seconds")
+
+                    continueTesting = input("Do you want to input another N (Y/N)? ")
+                    continueTesting = continueTesting.upper()
+                    if continueTesting == "Y":
+                        newArrSize = input("What is the N? ")
+                        newArrSizeInt = int(newArrSize)
+                        newTestArr = [0] * newArrSizeInt
+                        start_time = time.time()
+                        merge_sort(createWorseCase(newTestArr))
                         print(f"For N = {newArrSize}, it takes: {elapsed_time:.4f} seconds\n")
                     mainLogic()
 
