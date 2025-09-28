@@ -9,7 +9,11 @@ def insertion_sort(bucket):
             j -= 1
         bucket[j + 1] = key
 
-def bucket_sort(arr):
+def printTime(elapsed_time, n):
+    print(f"For N = {n}, it takes: {elapsed_time:.6f} seconds")
+
+
+def bucket_sort(arr, isTesting):
     n = len(arr)
     start_time = time.time()
     buckets = [[] for _ in range(n)]
@@ -30,4 +34,7 @@ def bucket_sort(arr):
 
     end_time = time.time()
     elapsed_time = end_time - start_time
-    print(f"For N = {n}, it takes: {elapsed_time:.6f} seconds")
+    if (isTesting == False):
+        printTime(elapsed_time, n)
+    else:
+        return elapsed_time

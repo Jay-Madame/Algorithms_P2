@@ -1,19 +1,25 @@
 import time
 
-def bubble_sort(arr):
+def printTime(elapsed_time, n):
+    print(f"For N = {n}, it takes: {elapsed_time:.6f} seconds")
+
+def bubble_sort(arr, isTesting):
     n = len(arr)
     start_time = time.time()
     for i in range(n - 1):
-        swapped = False  
-
+        swapped = False
         for j in range(n - 1 - i):
             if arr[j] > arr[j + 1]:
                 arr[j], arr[j + 1] = arr[j + 1], arr[j]
-                swapped = True 
-
+                swapped = True
         if not swapped:
-            end_time = time.time()
-            elapsed_time = end_time - start_time
-            print(f"For N = {n}, it takes: {elapsed_time:.6f} seconds")
             break
+    end_time = time.time()
+    elapsed_time = end_time - start_time
+
+    if not isTesting:
+        printTime(elapsed_time, n)
+    else:
+        return elapsed_time
+    
     return arr

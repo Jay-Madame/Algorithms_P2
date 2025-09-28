@@ -37,14 +37,15 @@ def sortLogic(intType, typeOfSort):
 3. Worst Case
 4. Exit {typeOfSort} sort test""")
     caseType = input("Select the case (1-4): ")
+    isTesting = False
     match intType:
         case "1":
             match caseType:
                 case "1":
                     print("\nIn the best case,")
-                    bubble_sort(createBestCase(testcase1))
-                    bubble_sort(createBestCase(testcase2))
-                    bubble_sort(createBestCase(testcase3))
+                    bubble_sort(createBestCase(testcase1), isTesting)
+                    bubble_sort(createBestCase(testcase2), isTesting)
+                    bubble_sort(createBestCase(testcase3), isTesting)
                     
                     continueTesting = input("Do you want to input another N (Y/N)? ")
                     continueTesting = continueTesting.upper()
@@ -52,14 +53,14 @@ def sortLogic(intType, typeOfSort):
                         newArrSize = input("What is the N? ")
                         newArrSizeInt = int(newArrSize)
                         newTestArr = [0] * newArrSizeInt
-                        bubble_sort(createBestCase(newTestArr))
+                        bubble_sort(createBestCase(newTestArr), isTesting)
                     print("")
                     mainLogic()
                 case "2":
                     print("\nIn the average case,")
-                    bubble_sort(createAvgCase(testcase1))
-                    bubble_sort(createAvgCase(testcase2))
-                    bubble_sort(createAvgCase(testcase3))
+                    bubble_sort(createAvgCase(testcase1), isTesting)
+                    bubble_sort(createAvgCase(testcase2), isTesting)
+                    bubble_sort(createAvgCase(testcase3), isTesting)
 
                     continueTesting = input("Do you want to input another N (Y/N)? ")
                     continueTesting = continueTesting.upper()
@@ -67,14 +68,14 @@ def sortLogic(intType, typeOfSort):
                         newArrSize = input("What is the N? ")
                         newArrSizeInt = int(newArrSize)
                         newTestArr = [0] * newArrSizeInt
-                        bubble_sort(createAvgCase(newTestArr))
+                        bubble_sort(createAvgCase(newTestArr), isTesting)
                     print("")
                     mainLogic()
                 case "3":
                     print("\nIn the worst case,")
-                    bubble_sort(createWorseCase(testcase1))
-                    bubble_sort(createWorseCase(testcase2))
-                    bubble_sort(createWorseCase(testcase3))
+                    bubble_sort(createWorseCase(testcase1), isTesting)
+                    bubble_sort(createWorseCase(testcase2), isTesting)
+                    bubble_sort(createWorseCase(testcase3), isTesting)
 
                     continueTesting = input("Do you want to input another N (Y/N)? ")
                     continueTesting = continueTesting.upper()
@@ -82,16 +83,16 @@ def sortLogic(intType, typeOfSort):
                         newArrSize = input("What is the N? ")
                         newArrSizeInt = int(newArrSize)
                         newTestArr = [0] * newArrSizeInt
-                        bubble_sort(createWorseCase(newTestArr))
+                        bubble_sort(createWorseCase(newTestArr), isTesting)
                     print("")
                     mainLogic()
         case "2":
             match caseType:
                 case "1":
                     print("\nIn the best case,")
-                    merge_sort(createBestCase(testcase1))
-                    merge_sort(createBestCase(testcase2))
-                    merge_sort(createBestCase(testcase3))
+                    merge_sort(createBestCase(testcase1), isTesting)
+                    merge_sort(createBestCase(testcase2), isTesting)
+                    merge_sort(createBestCase(testcase3), isTesting)
 
                     continueTesting = input("Do you want to input another N (Y/N)? ")
                     continueTesting = continueTesting.upper()
@@ -99,14 +100,14 @@ def sortLogic(intType, typeOfSort):
                         newArrSize = input("What is the N? ")
                         newArrSizeInt = int(newArrSize)
                         newTestArr = [0] * newArrSizeInt
-                        merge_sort(createBestCase(newTestArr))
+                        merge_sort(createBestCase(newTestArr), isTesting)
                     print("")
                     mainLogic()
                 case "2":
                     print("\nIn the average case,")
-                    merge_sort(createAvgCase(testcase1))
-                    merge_sort(createAvgCase(testcase2))
-                    merge_sort(createAvgCase(testcase3))
+                    merge_sort(createAvgCase(testcase1), isTesting)
+                    merge_sort(createAvgCase(testcase2), isTesting)
+                    merge_sort(createAvgCase(testcase3), isTesting)
 
                     continueTesting = input("Do you want to input another N (Y/N)? ")
                     continueTesting = continueTesting.upper()
@@ -114,14 +115,14 @@ def sortLogic(intType, typeOfSort):
                         newArrSize = input("What is the N? ")
                         newArrSizeInt = int(newArrSize)
                         newTestArr = [0] * newArrSizeInt
-                        merge_sort(createAvgCase(newTestArr))
+                        merge_sort(createAvgCase(newTestArr), isTesting)
                     print("")
                     mainLogic()
                 case "3":
                     print("\nIn the worst case,")
-                    merge_sort(createWorseCase(testcase1))
-                    merge_sort(createWorseCase(testcase2))
-                    merge_sort(createWorseCase(testcase3))
+                    merge_sort(createWorseCase(testcase1), isTesting)
+                    merge_sort(createWorseCase(testcase2), isTesting)
+                    merge_sort(createWorseCase(testcase3), isTesting)
 
                     continueTesting = input("Do you want to input another N (Y/N)? ")
                     continueTesting = continueTesting.upper()
@@ -129,16 +130,16 @@ def sortLogic(intType, typeOfSort):
                         newArrSize = input("What is the N? ")
                         newArrSizeInt = int(newArrSize)
                         newTestArr = [0] * newArrSizeInt
-                        merge_sort(createWorseCase(newTestArr))
+                        merge_sort(createWorseCase(newTestArr), isTesting)
                     print("")
                     mainLogic()
         case "3":
             match caseType:
                 case "1":
                     print("\nIn the best case,")
-                    quick_sort(createBestCase(testcase1))
-                    quick_sort(createBestCase(testcase2))
-                    quick_sort(createBestCase(testcase3))
+                    quick_sort(createBestCase(testcase1), isTesting)
+                    quick_sort(createBestCase(testcase2), isTesting)
+                    quick_sort(createBestCase(testcase3), isTesting)
 
                     continueTesting = input("Do you want to input another N (Y/N)? ")
                     continueTesting = continueTesting.upper()
@@ -146,14 +147,14 @@ def sortLogic(intType, typeOfSort):
                         newArrSize = input("What is the N? ")
                         newArrSizeInt = int(newArrSize)
                         newTestArr = [0] * newArrSizeInt
-                        quick_sort(createBestCase(newTestArr))
+                        quick_sort(createBestCase(newTestArr), isTesting)
                     print("")
                     mainLogic()
                 case "2":
                     print("\nIn the average case,")
-                    quick_sort(createAvgCase(testcase1))
-                    quick_sort(createAvgCase(testcase2))
-                    quick_sort(createAvgCase(testcase3))
+                    quick_sort(createAvgCase(testcase1), isTesting)
+                    quick_sort(createAvgCase(testcase2), isTesting)
+                    quick_sort(createAvgCase(testcase3), isTesting)
 
                     continueTesting = input("Do you want to input another N (Y/N)? ")
                     continueTesting = continueTesting.upper()
@@ -161,14 +162,14 @@ def sortLogic(intType, typeOfSort):
                         newArrSize = input("What is the N? ")
                         newArrSizeInt = int(newArrSize)
                         newTestArr = [0] * newArrSizeInt
-                        quick_sort(createAvgCase(newTestArr))
+                        quick_sort(createAvgCase(newTestArr), isTesting)
                     print("")
                     mainLogic()
                 case "3":
                     print("\nIn the worst case,")
-                    quick_sort(createWorseCase(testcase1))
-                    quick_sort(createWorseCase(testcase2))
-                    quick_sort(createWorseCase(testcase3))
+                    quick_sort(createWorseCase(testcase1), isTesting)
+                    quick_sort(createWorseCase(testcase2), isTesting)
+                    quick_sort(createWorseCase(testcase3), isTesting)
 
                     continueTesting = input("Do you want to input another N (Y/N)? ")
                     continueTesting = continueTesting.upper()
@@ -176,16 +177,16 @@ def sortLogic(intType, typeOfSort):
                         newArrSize = input("What is the N? ")
                         newArrSizeInt = int(newArrSize)
                         newTestArr = [0] * newArrSizeInt
-                        quick_sort(createWorseCase(newTestArr))
+                        quick_sort(createWorseCase(newTestArr), isTesting)
                     print("")
                     mainLogic()
         case "4":
             match caseType:
                 case "1":
                     print("\nIn the best case,")
-                    bucket_sort(createBestCase(testcase1))
-                    bucket_sort(createBestCase(testcase2))
-                    bucket_sort(createBestCase(testcase3))
+                    bucket_sort(createBestCase(testcase1), isTesting)
+                    bucket_sort(createBestCase(testcase2), isTesting)
+                    bucket_sort(createBestCase(testcase3), isTesting)
 
                     continueTesting = input("Do you want to input another N (Y/N)? ")
                     continueTesting = continueTesting.upper()
@@ -193,14 +194,14 @@ def sortLogic(intType, typeOfSort):
                         newArrSize = input("What is the N? ")
                         newArrSizeInt = int(newArrSize)
                         newTestArr = [0] * newArrSizeInt
-                        bucket_sort(createBestCase(newTestArr))
+                        bucket_sort(createBestCase(newTestArr), isTesting)
                     print("")
                     mainLogic()
                 case "2":
                     print("\nIn the average case,")
-                    bucket_sort(createAvgCase(testcase1))
-                    bucket_sort(createAvgCase(testcase2))
-                    bucket_sort(createAvgCase(testcase3))
+                    bucket_sort(createAvgCase(testcase1), isTesting)
+                    bucket_sort(createAvgCase(testcase2), isTesting)
+                    bucket_sort(createAvgCase(testcase3), isTesting)
 
                     continueTesting = input("Do you want to input another N (Y/N)? ")
                     continueTesting = continueTesting.upper()
@@ -208,14 +209,14 @@ def sortLogic(intType, typeOfSort):
                         newArrSize = input("What is the N? ")
                         newArrSizeInt = int(newArrSize)
                         newTestArr = [0] * newArrSizeInt
-                        bucket_sort(createAvgCase(newTestArr))
+                        bucket_sort(createAvgCase(newTestArr), isTesting)
                     print("")
                     mainLogic()
                 case "3":
                     print("\nIn the worst case,")
-                    bucket_sort(createWorseCase(testcase1))
-                    bucket_sort(createWorseCase(testcase2))
-                    bucket_sort(createWorseCase(testcase3))
+                    bucket_sort(createWorseCase(testcase1), isTesting)
+                    bucket_sort(createWorseCase(testcase2), isTesting)
+                    bucket_sort(createWorseCase(testcase3), isTesting)
 
                     continueTesting = input("Do you want to input another N (Y/N)? ")
                     continueTesting = continueTesting.upper()
@@ -223,7 +224,7 @@ def sortLogic(intType, typeOfSort):
                         newArrSize = input("What is the N? ")
                         newArrSizeInt = int(newArrSize)
                         newTestArr = [0] * newArrSizeInt
-                        bucket_sort(createWorseCase(newTestArr))
+                        bucket_sort(createWorseCase(newTestArr), isTesting)
                     print("")
                     mainLogic()
 
@@ -233,14 +234,14 @@ def createBestCase(arr):
     return arr            
 
 def createWorseCase(arr):
-    for i in range(len(arr)):
-        arr[i] = random.randint(0,10000)    
+    n = len(arr)
+    for i in range(n):
+        arr[i] = n - 1 - i
     return arr
 
 def createAvgCase(arr):
-    middleRange = len(arr) // 2
-    for i in range(middleRange):
-        arr[i] = random.randint(0, 10000)
+    for i in range(len(arr)):
+        arr[i] = random.randint(0,10000)    
     return arr
 
 def mainLogic():

@@ -1,12 +1,18 @@
 import time
 
-def merge_sort(arr):
+def printTime(elapsed_time, n):
+    print(f"For N = {n}, it takes: {elapsed_time:.6f} seconds")
+
+def merge_sort(arr, isTesting):
     n = len(arr)
     start_time = time.time()
     sorted_arr = merge_sort_untimed(arr)
     end_time = time.time()
     elapsed_time = end_time - start_time
-    print(f"For N = {n}, it takes: {elapsed_time:.6f} seconds")
+    if (isTesting == False):
+        printTime(elapsed_time, n)
+    else:
+        return elapsed_time
     return sorted_arr
 
 def merge_sort_untimed(arr):
