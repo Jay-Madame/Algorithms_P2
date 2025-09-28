@@ -29,20 +29,22 @@ testcase1 = [0] * 100
 testcase2 = [0] * 1000
 testcase3 = [0] * 10000
 
-print("Bubble Sort: ")
+print("\n\nNEW DATA \n\n")
 
 print("Best Case:")
 for i in range(testCases):
-    elapsed_time = bubble_sort(createBestCase(testcase1), isTesting)
+    elapsed_time = bucket_sort(createBestCase(testcase3), isTesting)
     print(f"{elapsed_time:.6f}")
 
-print("Worst Case:")
-for i in range(testCases):
-    elapsed_time = bubble_sort(createWorseCase(testcase1), isTesting)
-    print(f"{elapsed_time:.6f}")
-
-print("Average Case:")
+print("\nAverage Case:")
 
 for i in range(testCases):
-    elapsed_time = bubble_sort(createAvgCase(testcase1), isTesting)
+    elapsed_time = bucket_sort(createAvgCase(testcase3), isTesting)
     print(f"{elapsed_time:.6f}")
+
+print("\nWorst Case:")
+for i in range(testCases):
+    elapsed_time = bucket_sort(createWorseCase(testcase3), isTesting)
+    print(f"{elapsed_time:.6f}")
+
+
