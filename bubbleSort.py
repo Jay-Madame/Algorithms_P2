@@ -1,17 +1,14 @@
 def bubble_sort(arr):
-    def swap(i, j):
-        arr[i], arr[j] = arr[j], arr[i]
-
     n = len(arr)
-    swapped = True
-    
-    x = -1
-    while swapped:
-        swapped = False
-        x = x + 1
-        for i in range(1, n-x):
-            if arr[i - 1] > arr[i]:
-                swap(i - 1, i)
-                swapped = True
-                    
+
+    for i in range(n - 1):
+        swapped = False  
+
+        for j in range(n - 1 - i):
+            if arr[j] > arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+                swapped = True 
+
+        if not swapped:
+            break
     return arr
