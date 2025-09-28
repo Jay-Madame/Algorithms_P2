@@ -1,5 +1,5 @@
 import random
-import time
+from bucketSort import *
 from bubbleSort import *
 from mergeSort import *
 from quickSort import *
@@ -17,7 +17,7 @@ def retryLogic(userInput):
         case "3":
             sortLogic(userInput, "Quick")
         case "4":
-            sortLogic(userInput, "Heap")
+            sortLogic(userInput, "Bucket")
         case "5":
             exit
         case _:
@@ -179,6 +179,53 @@ def sortLogic(intType, typeOfSort):
                         quick_sort(createWorseCase(newTestArr))
                     print("")
                     mainLogic()
+        case "4":
+            match caseType:
+                case "1":
+                    print("\nIn the best case,")
+                    bucket_sort(createBestCase(testcase1))
+                    bucket_sort(createBestCase(testcase2))
+                    bucket_sort(createBestCase(testcase3))
+
+                    continueTesting = input("Do you want to input another N (Y/N)? ")
+                    continueTesting = continueTesting.upper()
+                    if continueTesting == "Y":
+                        newArrSize = input("What is the N? ")
+                        newArrSizeInt = int(newArrSize)
+                        newTestArr = [0] * newArrSizeInt
+                        bucket_sort(createBestCase(newTestArr))
+                    print("")
+                    mainLogic()
+                case "2":
+                    print("\nIn the average case,")
+                    bucket_sort(createAvgCase(testcase1))
+                    bucket_sort(createAvgCase(testcase2))
+                    bucket_sort(createAvgCase(testcase3))
+
+                    continueTesting = input("Do you want to input another N (Y/N)? ")
+                    continueTesting = continueTesting.upper()
+                    if continueTesting == "Y":
+                        newArrSize = input("What is the N? ")
+                        newArrSizeInt = int(newArrSize)
+                        newTestArr = [0] * newArrSizeInt
+                        bucket_sort(createAvgCase(newTestArr))
+                    print("")
+                    mainLogic()
+                case "3":
+                    print("\nIn the worst case,")
+                    bucket_sort(createWorseCase(testcase1))
+                    bucket_sort(createWorseCase(testcase2))
+                    bucket_sort(createWorseCase(testcase3))
+
+                    continueTesting = input("Do you want to input another N (Y/N)? ")
+                    continueTesting = continueTesting.upper()
+                    if continueTesting == "Y":
+                        newArrSize = input("What is the N? ")
+                        newArrSizeInt = int(newArrSize)
+                        newTestArr = [0] * newArrSizeInt
+                        bucket_sort(createWorseCase(newTestArr))
+                    print("")
+                    mainLogic()
 
 def createBestCase(arr):
     for i in range(len(arr)):
@@ -203,7 +250,7 @@ Select the sorting algorithm you want to test.
 1. Bubble Sort
 2. Merge Sort
 3. Quick Sort
-4. Heap Sort (replacing this line with the algorithm you choose)
+4. Bucket Sort
 5. Exit""")
     userInput = getUserLogic();
 
@@ -215,7 +262,7 @@ Select the sorting algorithm you want to test.
         case "3":
             sortLogic(userInput, "Quick")
         case "4":
-            sortLogic(userInput, "Heap")
+            sortLogic(userInput, "Bucket")
         case "5":
             exit
         case _:
